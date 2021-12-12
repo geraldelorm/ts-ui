@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+.card {
+  width: 530px;
+  background-color: white;
+  padding: 78px 65px;
+}
+
+.customModal{
+  position: fixed;
+  top: 20%;
+  right: 15%;
+}

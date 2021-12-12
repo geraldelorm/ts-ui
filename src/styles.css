@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.app-input{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #F4F5F7;
+    border-radius: 4px;
+    border: transparent;
+}
+.app-description{
+    width: 100%;
+    padding:  20px;
+    background-color: #F4F5F7;
+    border-radius: 4px;
+    border: transparent;
+}
+.app-input:focus{
+    border: 2px solid #F4F5F7 !important;
+    outline: none;
+    background-color: white;
+}
+.app-description:focus{
+    border: 2px solid #F4F5F7 !important;
+    outline: none;
+    background-color: white;
+}
+.app-button{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 4px;
+    appearance: none;
+    border: none;
+    color: white;
+
+}
+.app-button:hover{
+    background-color: #4978d4 !important;
+}
+.app-button-small{
+    width: 141px;
+    height: 45px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    appearance: none;
+    border: none;
+    color: white;
+}

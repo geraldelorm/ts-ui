@@ -1,0 +1,40 @@
+<div class="sidebar shadow-lg">
+    <div class="avatar mx-auto">
+
+    </div>
+    <div class="text-center pt-4">Edem Ahadzi</div>
+    <div style="margin-top: 86px;">
+        <div style="padding-bottom: 37px; font-weight: 700; font-size: 18px;">
+            Portfolio
+        </div>
+        <div>
+        <div>
+            <div class="d-flex ">
+                <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
+                <div style ="padding-left: 20px;">
+                    <div style="font-weight: 700; font-size: 18px;">First Portfolio</div>
+                    <div style="font-weight: 700; font-size: 10px;">This is my first portfolio</div>
+                    <div style="font-weight: 700; font-size: 10px;">$200</div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="d-flex ">
+                <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
+                <div style ="padding-left: 20px;">
+                    <div style="font-weight: 700; font-size: 18px;">Second Portfolio</div>
+                    <div style="font-weight: 700; font-size: 10px;">This is my Second portfolio</div>
+                    <div style="font-weight: 700; font-size: 10px;">$200</div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div>
+            <button class="bg-primary app-button" (click)=showPortModal()  type="submit" >Create Portfolio</button>
+        </div>
+    </div>
+</div>
+
+<app-portfoliomodal [isPortModal]=isPortModal></app-portfoliomodal>

@@ -1,0 +1,80 @@
+<div class="d-flex">
+  <app-sidebar></app-sidebar>
+
+  <div class="wrapper mx-auto">
+    <app-header></app-header>
+    <div class="w-100">
+      <div class="row" style="padding-top: 204px">
+        <div class="col">
+          <div class="text-center" style="font-weight: 700; font-size: 18px; color: #374151">
+            This portfolio is empty
+          </div>
+          <div class="text-center" style="
+              color: #9fa6b2;
+              font-size: 18px;
+              font-weight: 700;
+              padding-bottom: 30px;
+            ">
+            Add any products to get started
+          </div>
+          <div class="d-flex justify-content-center">
+            <button *ngIf="!isModal" type="button" (click)="showModal()" class="bg-primary port-button"
+              style="padding-left: 27px">
+              Add New
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- modal -->
+<div *ngIf="isModal" class="customModal fade active show" tabindex="-1" aria-hidden="true" style="width: 700px">
+  <div class="modal-content" style="padding: 32px 74px">
+    <div class="row">
+      <div class="col">
+        <div style="font-weight: 500; font-size: 28px">Transaction</div>
+      </div>
+      <div class="col">
+        <div class="d-flex float-end">
+          <button type="button" (click)="hideModal()" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="pt-3">
+        <select class="form-select app-input" id="inputGroupSelect02">
+          <option selected>Choose a product</option>
+          <option *ngFor="let product of products" value="product">
+            {{ product }}
+          </option>
+        </select>
+      </div>
+      <div class="row pt-5">
+        <div class="col-md-6">
+          <label class="pb-2" for="quantity" style="font-size: 14px; font-weight: 500">Quantity</label>
+          <input class="app-input" id="quantity" type="number" min="0" name="quantity" placeholder="0" />
+        </div>
+        <div class="col-md-6">
+          <label class="pb-2" for="price" style="font-size: 14px; font-weight: 500">Price Per Product</label>
+          <input class="app-input" id="price" type="number" min="0" name="price" placeholder="0.00" />
+        </div>
+      </div>
+      <div class="py-4 float-end">
+        <div>Total Spent</div>
+        <div>$ 0</div>
+      </div>
+      <div class="pt-4">
+        <button class="bg-primary app-button" type="submit">
+          Add Transaction
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal -->
+

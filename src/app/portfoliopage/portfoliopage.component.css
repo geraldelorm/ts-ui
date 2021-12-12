@@ -1,0 +1,19 @@
+.port-button{
+    width: 141px;
+    height: 45px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    appearance: none;
+    border: none;
+    color: white;
+}
+.customModal{
+  position: fixed;
+  top: 20%;
+  right: 15%;
+}
+.wrapper{
+  width: 100%;
+padding: 70px 100px;
+overflow:scroll;
+}

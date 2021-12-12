@@ -1,0 +1,35 @@
+<div *ngIf=isPortModal class=" customModal fade active show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="width: 700px;">
+
+    <div class="modal-content" style="padding: 32px 74px;">
+      <div class="row">
+        <div class="col">
+          <div style="font-weight: 500; font-size: 28px;">Create Portfolio</div>
+        </div>
+        <div class="col">
+          <div class="d-flex float-end">
+            <button type="button"  class="btn-close" (click)=hidePortModal() data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <div class="pt-3">
+            <label class="pb-2" for="name" style="font-size: 14px; font-weight: 500;">Name</label>
+            <input class="app-input" id="name" type="text" name="name">
+          </div>
+          <div class="pt-3">
+            <label class="pb-2" for="description" style="font-size: 14px; font-weight: 500;">Description</label>
+            <textarea  class="app-description" id="description" type="text" name="description"></textarea>
+          </div>
+          <div class="pt-5">
+            <button class="bg-primary app-button"  type="submit">Create Portfolio</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

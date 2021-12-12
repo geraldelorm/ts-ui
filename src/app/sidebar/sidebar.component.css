@@ -1,0 +1,14 @@
+.sidebar{
+    width: 350px;
+    position:sticky;
+    top: 0;
+    height: 100vh;
+    background-color: #FFFFFF;
+    padding: 70px 45px;
+}
+.avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #D2D6DC;
+}
