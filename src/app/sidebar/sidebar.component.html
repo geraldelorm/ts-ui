@@ -1,40 +1,38 @@
 <div class="sidebar shadow-lg">
-    <div class="avatar mx-auto">
+  <div class="avatar mx-auto">
 
+  </div>
+
+  <div class="text-center pt-4">Edem Ahadzi</div>
+  <div class="py-3">
+    <button class="bg-primary app-button" type="submit">Home</button>
+  </div>
+  <div>
+    <button class="bg-primary app-button" type="submit">Transactions</button>
+  </div>
+  <div class="py-3">
+    <button class="bg-primary app-button" (click)=showPortModal() type="submit">Create Portfolio</button>
+  </div>
+  <div class="py-3">
+    <div style="padding-bottom: 37px; font-weight: 700; font-size: 18px;">
+      Portfolios
     </div>
-    <div class="text-center pt-4">Edem Ahadzi</div>
-    <div style="margin-top: 86px;">
-        <div style="padding-bottom: 37px; font-weight: 700; font-size: 18px;">
-            Portfolio
-        </div>
-        <div>
-        <div>
-            <div class="d-flex ">
-                <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
-                <div style ="padding-left: 20px;">
-                    <div style="font-weight: 700; font-size: 18px;">First Portfolio</div>
-                    <div style="font-weight: 700; font-size: 10px;">This is my first portfolio</div>
-                    <div style="font-weight: 700; font-size: 10px;">$200</div>
-                    <hr>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="d-flex ">
-                <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
-                <div style ="padding-left: 20px;">
-                    <div style="font-weight: 700; font-size: 18px;">Second Portfolio</div>
-                    <div style="font-weight: 700; font-size: 10px;">This is my Second portfolio</div>
-                    <div style="font-weight: 700; font-size: 10px;">$200</div>
-                    <hr>
-                </div>
-            </div>
-        </div>
+    <div>
+      <!-- List of portfolios -->
+      <div style="height: 25vh; overflow:auto;">
+        <a  class="d-flex list-group-item" style="cursor: pointer;" *ngFor="let portfolio of portfolios">
+          <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
+          <div style="padding-left: 20px;">
+            <div style="font-weight: 700; font-size: 14px;">{{portfolio.name}}</div>
+            <div style="font-weight: 700; font-size: 10px;">{{portfolio.description}}</div>
+          </div>
+        </a>
+      </div>
+      <!-- end -->
     </div>
-        <div>
-            <button class="bg-primary app-button" (click)=showPortModal()  type="submit" >Create Portfolio</button>
-        </div>
-    </div>
+
+  </div>
+
 </div>
 
 <app-portfoliomodal [isPortModal]=isPortModal></app-portfoliomodal>

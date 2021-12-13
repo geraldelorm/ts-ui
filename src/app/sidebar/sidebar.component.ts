@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetPortfolioService } from '../service/get-portfolio.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
   isPortModal: boolean = false;
 
-  constructor() { }
+  portfolios:any
+
+  constructor(private getPortfolioService : GetPortfolioService) { }
 
   ngOnInit(): void {
+    this.getPortfolioService.getPortfolios().subscribe((data)=> {this.portfolios = data},(error)=>{
+      alert("Error loading porfolios")
+      console.log(error);
+    })
   }
 
   showPortModal(){

@@ -11,8 +11,13 @@ import { PortfoliomodalComponent } from './portfoliomodal/portfoliomodal.compone
 import { AddProductModalComponent } from './add-product-modal/add-product-modal.component';
 import { HeaderComponent } from './header/header.component';
 import { UserRegistrationService } from './service/user-registration.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UserLoginServiceService } from './service/user-login-service.service';
+import { CreatePortfolioService } from './service/create-portfolio.service';
+import { AddTransactionService } from './service/add-transaction.service';
+import { JWTInterceptor } from './interceptor/jwt-interceptor';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -24,15 +29,21 @@ import { FormsModule } from '@angular/forms';
     PortfoliomodalComponent,
     AddProductModalComponent,
     HeaderComponent,
-  
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxWebstorageModule.forRoot()
   ],
-  providers: [UserRegistrationService],
+  providers: [UserRegistrationService,UserLoginServiceService,CreatePortfolioService,AddTransactionService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: JWTInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

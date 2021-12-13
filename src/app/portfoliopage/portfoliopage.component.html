@@ -47,9 +47,9 @@
 
     <div>
       <div class="pt-3">
-        <select class="form-select app-input" id="inputGroupSelect02">
-          <option selected>Choose a product</option>
-          <option *ngFor="let product of products" value="product">
+        <label class="pb-2" style="font-size: 14px; font-weight: 500">Select a product</label>
+        <select [(ngModel)]="selectedProduct" class="form-select app-input" id="inputGroupSelect02" >
+          <option *ngFor="let product of products" value="product" >
             {{ product }}
           </option>
         </select>
@@ -57,16 +57,26 @@
       <div class="row pt-5">
         <div class="col-md-6">
           <label class="pb-2" for="quantity" style="font-size: 14px; font-weight: 500">Quantity</label>
-          <input class="app-input" id="quantity" type="number" min="0" name="quantity" placeholder="0" />
+          <input class="app-input" id="quantity" type="number" min="0" name="quantity" placeholder="0" [(ngModel)]="quantity"/>
         </div>
         <div class="col-md-6">
           <label class="pb-2" for="price" style="font-size: 14px; font-weight: 500">Price Per Product</label>
-          <input class="app-input" id="price" type="number" min="0" name="price" placeholder="0.00" />
+          <input class="app-input" id="price" type="number" min="0" name="price" placeholder="0.00" [(ngModel)]="price"/>
         </div>
       </div>
-      <div class="py-4 float-end">
-        <div>Total Spent</div>
-        <div>$ 0</div>
+      <div class="row pt-5">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+          <label class="pb-2" style="font-size: 14px; font-weight: 500">Select a side</label>
+          <select [(ngModel)]="selectedSide" class="form-select app-input" id="inputGroupSelect02">
+
+            <option *ngFor="let side of sides" value="side">
+              {{ side }}
+            </option>
+          </select>
+        </div>
       </div>
       <div class="pt-4">
         <button class="bg-primary app-button" type="submit">

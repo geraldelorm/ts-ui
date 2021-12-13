@@ -18,14 +18,14 @@
         <div>
           <div class="pt-3">
             <label class="pb-2" for="name" style="font-size: 14px; font-weight: 500;">Name</label>
-            <input class="app-input" id="name" type="text" name="name">
+            <input class="app-input" id="name" type="text" name="name" [(ngModel)]="name">
           </div>
           <div class="pt-3">
             <label class="pb-2" for="description" style="font-size: 14px; font-weight: 500;">Description</label>
-            <textarea  class="app-description" id="description" type="text" name="description"></textarea>
+            <textarea  class="app-description" id="description" type="text" name="description" [(ngModel)]="description"></textarea>
           </div>
           <div class="pt-5">
-            <button class="bg-primary app-button"  type="submit">Create Portfolio</button>
+            <button class="bg-primary app-button"  type="submit" (click)=addPortfolio()>Create Portfolio</button>
           </div>
         </div>
       </div>

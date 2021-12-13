@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../payloads/user';
+import { Router } from '@angular/router';
+import { User } from '../payloads/request/user';
 import { UserRegistrationService } from '../service/user-registration.service';
 
 @Component({
@@ -12,16 +13,18 @@ export class SignupComponent implements OnInit {
   user: User = new User({ firstName: "", lastName: "", email: "", password: "" , userRole: "Client"});
   //message:any
 
-  constructor(private registrationService: UserRegistrationService) { }
+  constructor(private registrationService: UserRegistrationService,private router:Router) { }
 
   ngOnInit(): void {
 
   }
 
   public registerNow(){
-    let res = this.registrationService.doRegister(this.user);
-    res.subscribe((data) => console.log(data))
-    
+    this.registrationService.doRegister(this.user).subscribe((data)=>{
+      this.router.navigate(['/login']);
+    },(error) =>{
+      alert("Email already exist")
+    });
   }
 
 }

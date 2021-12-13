@@ -4,11 +4,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UserRegistrationService {
+export class GetPortfolioService {
 
   constructor(private http: HttpClient) { }
 
-  public doRegister(user){
-    return this.http.post("http://localhost:8083/api/v1/auth/signup", user)
+  /**
+   * getPortfolios
+   */
+  public getPortfolios() {
+    return this.http.get("http://localhost:8083/api/v1/portfolio")
   }
 }
