@@ -18,6 +18,8 @@ import { CreatePortfolioService } from './service/create-portfolio.service';
 import { AddTransactionService } from './service/add-transaction.service';
 import { JWTInterceptor } from './interceptor/jwt-interceptor';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { HomeComponent } from './home/home.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     PortfoliomodalComponent,
     AddProductModalComponent,
     HeaderComponent,
+    HomeComponent,
+    TransactionComponent,
 
   ],
   imports: [
