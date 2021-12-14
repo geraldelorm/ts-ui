@@ -5,10 +5,10 @@
 
   <div class="text-center pt-4">Edem Ahadzi</div>
   <div class="py-3">
-    <button class="bg-primary app-button" type="submit">Home</button>
+    <button class="bg-primary app-button" type="submit" routerLink="/home">Home</button>
   </div>
   <div>
-    <button class="bg-primary app-button" type="submit">Transactions</button>
+    <button class="bg-primary app-button" type="submit" routerLink="/transactions">Transactions</button>
   </div>
   <div class="py-3">
     <button class="bg-primary app-button" (click)=showPortModal() type="submit">Create Portfolio</button>
@@ -19,7 +19,7 @@
     </div>
     <div>
       <!-- List of portfolios -->
-      <div style="height: 25vh; overflow:auto;">
+      <div style="height: 25vh; overflow:auto; border-radius: 4px;">
         <a  class="d-flex list-group-item" style="cursor: pointer;" *ngFor="let portfolio of portfolios">
           <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
           <div style="padding-left: 20px;">

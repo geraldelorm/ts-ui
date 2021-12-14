@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
     this.loginService.doLogin(this.login).subscribe((data)=>{
       console.log(data)
-        this.router.navigate(['/portfolio'])
+        this.router.navigate(['/home'])
     },(error)=>{
         alert("Email/Password incorrect")
     })
