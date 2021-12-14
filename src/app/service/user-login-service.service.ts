@@ -16,7 +16,7 @@ export class UserLoginServiceService {
   constructor(private http: HttpClient, private localStorage:LocalStorageService) { }
 
   public doLogin(login){
-    return this.http.post<LoginResponse>("http://ts-order-processing.herokuapp.com/api/v1/auth/login", login).pipe(
+    return this.http.post<LoginResponse>("https://ts-order-processing.herokuapp.com/api/v1/auth/login", login).pipe(
       map((data) => {
         this.localStorage.store(
           'bearer',
@@ -43,7 +43,7 @@ export class UserLoginServiceService {
     this.refreshTokenPayload.refreshToken = this.localStorage.retrieve('refreshToken');
     return this.http
       .post<LoginResponse>(
-        `http://ts-order-processing.herokuapp.com/api/v1/auth/refresh/token`,
+        `https://ts-order-processing.herokuapp.com/api/v1/auth/refresh/token`,
         this.refreshTokenPayload
       )
       .pipe(
@@ -58,6 +58,13 @@ export class UserLoginServiceService {
           this.localStorage.store('expiresAt', response.expiresAt);
         })
       );
+  }
+
+  retrieveData(key:string){
+   if(key == 'email'){
+    return this.localStorage.retrieve('email');
+   }
+
   }
 
 }

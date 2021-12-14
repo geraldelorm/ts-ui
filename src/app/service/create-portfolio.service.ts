@@ -12,6 +12,6 @@ export class CreatePortfolioService {
    * addPortfolio
    */
   public addPortfolio(portfolio) {
-      return this.http.post("http://ts-order-processing.herokuapp.com/api/v1/portfolio/create", portfolio)
+      return this.http.post("https://ts-order-processing.herokuapp.com/api/v1/portfolio/create", portfolio)
   }
 }

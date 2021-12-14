@@ -49,6 +49,7 @@
             <th scope="col">#</th>
             <th scope="col">Ticker</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Value</th>
           </tr>
         </thead>
         <tbody>
@@ -56,6 +57,7 @@
             <th scope="row">{{prod.id}}</th>
             <td>{{prod.ticker}}</td>
             <td>{{prod.quantity}}</td>
+            <td>{{prod.value | currency:'GH₵ '}}</td>
           </tr>
 
         </tbody>

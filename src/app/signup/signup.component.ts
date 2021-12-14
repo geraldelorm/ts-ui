@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
     this.registrationService.doRegister(this.user).subscribe((data)=>{
       this.router.navigate(['/login']);
     },(error) =>{
-      alert("Email already exist")
+     console.log(error)
     });
   }
 

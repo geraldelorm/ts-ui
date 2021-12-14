@@ -13,7 +13,7 @@ export class GetPortfolioService {
    * getPortfolios
    */
   public getPortfolios() {
-    return this.http.get<Array<portfolioResponse>>('http://ts-order-processing.herokuapp.com/api/v1/portfolio/user');
+    return this.http.get<Array<portfolioResponse>>('https://ts-order-processing.herokuapp.com/api/v1/portfolio/user');
   }
 
 }

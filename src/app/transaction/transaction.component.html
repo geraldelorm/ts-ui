@@ -25,7 +25,7 @@
             <th scope="row">{{order.id}}</th>
             <td>{{order.product}}</td>
             <td>{{order.quantity}}</td>
-            <td>{{order.price}}</td>
+            <td>{{order.price | currency:'GH₵ '}}</td>
             <td>{{order.side}}</td>
             <td>{{order.status}}</td>
             <td>{{order.exchangeTradedOn}}</td>

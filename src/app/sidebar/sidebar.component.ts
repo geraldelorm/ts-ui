@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GetPortfolioService } from '../service/get-portfolio.service';
+import { UserLoginServiceService } from '../service/user-login-service.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,9 +11,10 @@ import { GetPortfolioService } from '../service/get-portfolio.service';
 export class SidebarComponent implements OnInit {
   isPortModal: boolean = false;
 
-  portfolios:any
+  portfolios:any;
+  email:string;
 
-  constructor(private getPortfolioService : GetPortfolioService) { }
+  constructor(private getPortfolioService : GetPortfolioService,private router:Router, private authService:UserLoginServiceService) { }
 
   ngOnInit(): void {
     this.getPortfolioService.getPortfolios().subscribe((data)=> {
@@ -21,6 +24,8 @@ export class SidebarComponent implements OnInit {
       alert("Error loading porfolios")
       console.log(error);
     })
+
+    this.email = this.authService.retrieveData("email");
   }
 
   showPortModal(){

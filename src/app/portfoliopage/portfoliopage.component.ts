@@ -66,7 +66,7 @@ export class PortfoliopageComponent implements OnInit {
     this.transaction.side = this.selectedSide;
 console.log(this.transaction)
 
-    this.addTransactionService.addTransaction(this.transaction).subscribe((data)=>{
+    this.addTransactionService.addTransaction(this.transaction, this.portfolioId).subscribe((data)=>{
         console.log(data)
         this.router.navigate(['/portfolio'])
     },(error)=>{
