@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { refreshTokenRequest } from '../payloads/response/login-response';
 import { GetPortfolioService } from '../service/get-portfolio.service';
 import { UserLoginServiceService } from '../service/user-login-service.service';
 
@@ -13,6 +14,8 @@ export class SidebarComponent implements OnInit {
 
   portfolios:any;
   email:string;
+
+  request:refreshTokenRequest = new refreshTokenRequest;
 
   constructor(private getPortfolioService : GetPortfolioService,private router:Router, private authService:UserLoginServiceService) { }
 
@@ -39,6 +42,13 @@ export class SidebarComponent implements OnInit {
 
   hidePortModal(){
     this.isPortModal = false;
+  }
+
+  logout(){
+    this.request.email = this.authService.retrieveData("email");
+    this.request.refreshToken = this.authService.retrieveData("refreshToken");
+    this.authService.logout(this.request);
+    this.router.navigate(['/login']);
   }
 
 }

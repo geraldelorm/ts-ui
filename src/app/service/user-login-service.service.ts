@@ -4,7 +4,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { map } from 'rxjs/internal/operators/map';
 import { tap } from 'rxjs/internal/operators/tap';
 import { RefreshTokenPayload } from '../payloads/request/login';
-import { LoginResponse } from '../payloads/response/login-response';
+import { LoginResponse, refreshTokenRequest } from '../payloads/response/login-response';
 
 @Injectable({
   providedIn: 'root'
@@ -64,7 +64,18 @@ export class UserLoginServiceService {
    if(key == 'email'){
     return this.localStorage.retrieve('email');
    }
+   else if(key =='refreshToken'){
+    return this.localStorage.retrieve('refreshToken');
+   }
+  }
 
+
+  logout(request:refreshTokenRequest){
+    this.http.post(`https://ts-order-processing.herokuapp.com/api/v1/auth/logout`,
+    request,
+    {responseType:'text'});
+
+    this.localStorage.clear()
   }
 
 }

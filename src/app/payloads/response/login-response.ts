@@ -8,3 +8,10 @@
   refreshToken:string;
   expiresAt :Date;
  }
+
+
+
+ export class refreshTokenRequest{
+  email:string;
+  refreshToken :string;
+ }

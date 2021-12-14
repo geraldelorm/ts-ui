@@ -37,6 +37,8 @@ export class PortfoliopageComponent implements OnInit {
       this.portfolioId = data;
     });
 
+    this.isModal = false;
+
     this.portfolio.getPortfolios().subscribe((data) =>{
       data.forEach(port =>{
         if(port.id == this.portfolioId){
@@ -68,7 +70,8 @@ console.log(this.transaction)
 
     this.addTransactionService.addTransaction(this.transaction, this.portfolioId).subscribe((data)=>{
         console.log(data)
-        this.router.navigate(['/portfolio'])
+        this.router.navigate(['/portfolio'+this.portfolioId]);
+        this.ngOnInit()
     },(error)=>{
       alert("Transaction not successfull. Try again")
     })
