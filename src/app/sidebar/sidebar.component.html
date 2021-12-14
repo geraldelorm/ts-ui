@@ -20,7 +20,7 @@
     <div>
       <!-- List of portfolios -->
       <div style="height: 25vh; overflow:auto; border-radius: 4px;">
-        <a  class="d-flex list-group-item" style="cursor: pointer;" *ngFor="let portfolio of portfolios">
+        <a  class="d-flex list-group-item" style="cursor: pointer;" [routerLink]="['/portfolio', portfolio.id]" *ngFor="let portfolio of portfolios">
           <div style="width: 60px; height: 60px; border-radius: 100%; background-color: #D2D6DC;"></div>
           <div style="padding-left: 20px;">
             <div style="font-weight: 700; font-size: 14px;">{{portfolio.name}}</div>

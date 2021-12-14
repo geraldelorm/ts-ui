@@ -9,6 +9,6 @@ export class UserRegistrationService {
   constructor(private http: HttpClient) { }
 
   public doRegister(user){
-    return this.http.post("http://localhost:8083/api/v1/auth/signup", user)
+    return this.http.post("http://ts-order-processing.herokuapp.com/api/v1/auth/signup", user)
   }
 }

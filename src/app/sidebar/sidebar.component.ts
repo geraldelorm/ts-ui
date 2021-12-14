@@ -14,7 +14,10 @@ export class SidebarComponent implements OnInit {
   constructor(private getPortfolioService : GetPortfolioService) { }
 
   ngOnInit(): void {
-    this.getPortfolioService.getPortfolios().subscribe((data)=> {this.portfolios = data},(error)=>{
+    this.getPortfolioService.getPortfolios().subscribe((data)=> {
+      this.portfolios = data
+      console.log(data);
+    },(error)=>{
       alert("Error loading porfolios")
       console.log(error);
     })

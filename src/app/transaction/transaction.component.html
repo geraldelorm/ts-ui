@@ -12,31 +12,25 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Ticker</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Side</th>
+            <th scope="col">Status</th>
+            <th scope="col">Exch Traded</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr *ngFor="let order of orders">
+            <th scope="row">{{order.id}}</th>
+            <td>{{order.product}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.price}}</td>
+            <td>{{order.side}}</td>
+            <td>{{order.status}}</td>
+            <td>{{order.exchangeTradedOn}}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+
         </tbody>
       </table>
       <!-- TABLE END -->

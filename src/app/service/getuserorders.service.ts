@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CreatePortfolioService {
+export class GetuserordersService {
 
   constructor(private http: HttpClient) { }
 
   /**
-   * addPortfolio
+   * getOrders
    */
-  public addPortfolio(portfolio) {
-      return this.http.post("http://ts-order-processing.herokuapp.com/api/v1/portfolio/create", portfolio)
+  public getOrders(){
+    return this.http.get("http://ts-order-processing.herokuapp.com/api/v1/order/user")
   }
 }

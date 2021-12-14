@@ -12,6 +12,6 @@ export class AddTransactionService {
    * addTransaction
    */
   public addTransaction(transaction) {
-    return  this.http.post("http://localhost:8083/api/v1/order/create", transaction)
+    return  this.http.post("http://ts-order-processing.herokuapp.com/api/v1/order/create/12", transaction)
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetuserordersService } from '../service/getuserorders.service';
 
 @Component({
   selector: 'app-transaction',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionComponent implements OnInit {
 
-  constructor() { }
+  orders : any
+
+  constructor(private getUserOrderService: GetuserordersService) { }
 
   ngOnInit(): void {
+      this.getUserOrderService.getOrders().subscribe((data)=>{
+        this.orders = data;
+        console.log(data);
+
+      }, (error)=>{
+        alert("Error loading orders")
+      })
   }
 
 }

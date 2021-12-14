@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Portfolio } from '../payloads/request/portfolio';
+import { portfolioResponse } from '../payloads/response/portfolio-response';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +13,7 @@ export class GetPortfolioService {
    * getPortfolios
    */
   public getPortfolios() {
-    return this.http.get('http://localhost:8083/api/v1/portfolio/user');
+    return this.http.get<Array<portfolioResponse>>('http://ts-order-processing.herokuapp.com/api/v1/portfolio/user');
   }
+
 }

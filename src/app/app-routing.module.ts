@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"sidebar",component:SidebarComponent},
-  {path:"portfolio",component:PortfoliopageComponent},
+  {path:"portfolio/:id",component:PortfoliopageComponent},
   {path:"portmodal",component:PortfoliomodalComponent},
   {path:"transactions",component:TransactionComponent},
   {path:"home",component:HomeComponent},
